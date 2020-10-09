@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
+//importa um modolo que simula um rest api, é utilizado quando o back-end não está concluído, ou seja, para testes, contém operações basicas do CRUD
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Hero } from './hero';
+//importa a interface hero
+import { Hero } from '../hero';
 
+//declara um injetor dentro no seletor root(arquivo principal do componente principal), ou seja, torna esse arquivo a serviço do app-component
+//nesse caso ele vai injetar dependencia no arquivo principal pois n contem constructor
 @Injectable({
   providedIn: 'root',
 })
+//exporta uma classe deixando-a pública para outros arquivos poderem usar, cria uma database interno que será implementado no MemoryDbService
 export class InMemoryDataService implements InMemoryDbService {
+  //metódo que cria um database
   createDb() {
     const heroes = [
-      { id: 11, name: 'Dr Nice' },
+      { id: 11, name: 'Dr Nice ' },
       { id: 12, name: 'Narco' },
       { id: 13, name: 'Bombasto' },
       { id: 14, name: 'Celeritas' },
@@ -19,6 +25,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Magma' },
       { id: 20, name: 'Tornado' }
     ];
+    //retorna o vetor estático
     return {heroes};
   }
 

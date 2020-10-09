@@ -1,7 +1,10 @@
+//exporta o vetor de heroes para varios componentes
+//reutilização de código
+
 import { Hero } from './hero';
 
 export const HEROES: Hero[] = [
-  { id: 11, name: 'Dr Nice' },
+  { id: 11, name: 'Dr Nice ' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },
   { id: 14, name: 'Celeritas' },
